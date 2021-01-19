@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>calcule de salaire.com</title>
+</head>
+
+<body>
+    <div class="container">
+        <form class="needs-validation" novalidate>
+            <div class="col-md-4 mb-3">
+                <label for="salaire brut">salaire brut</label>
+                <input type="text" class="form-control" id="salaire_brut" required>
+                <div class="valid-feedback">Ok !</div>
+                <div class="invalid-feedback">Valeur incorrecte</div>
+            </div>
+
+            <button onclick = "calcul()" class="btn btn-primary" type="submit">valider</button>
+        </form>
+    </div>
+
+    <script>
+
+        function calcul() {
+
+            var impots = 0.18;
+            var assurance = 0.07;
+            var pensions = 0.05;
+
+            var salaire_brut = parseInt(document.getElementById('salaire_brut').value);
+            var salairenet = salaire_brut - (salaire_brut*impots) - (salaire_brut*assurance) - (salaire_brut*pensions);
+            
+            alert (salairenet);
+        }
+        
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
